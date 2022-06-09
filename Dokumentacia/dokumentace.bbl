@@ -1,0 +1,21 @@
+\makeatletter
+\@ifundefined{url}{\def\url#1{{\tt
+  $<$#1$>$}}}{\DeclareUrlCommand\url{\def\UrlLeft{<} \def\UrlRight{>}
+  \urlstyle{tt}}}
+\makeatother
+\begin{thebibliography}{1}
+
+\bibitem{Fischer:1991}
+{\sc\bgroup}Fischer{\egroup}, C.~N.
+\newblock {\em Crafting a Compiler with C}.
+\newblock 1. vyd.
+\newblock [b.m.]: Addison Wesley, 1991.
+\newblock ISBN 978-0805321661.
+
+\bibitem{Wirth:1988}
+{\sc\bgroup}Wirth{\egroup}, N.
+\newblock {\em Algoritmy a štruktúry údajov}.
+\newblock [b.m.]: Alfa, 1988.
+\newblock ISBN 063-030-87.
+
+\end{thebibliography}

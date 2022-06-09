@@ -1,0 +1,88 @@
+//e znamena epsilon / lambda
+
+<program>		-> <prolog> <func_list>  SCANEOF
+<prolog>		-> package ID  NEWLINE
+<prolog>		-> NEWLINE <prolog>
+
+<func_list>		-> func <func> <func_list>
+<func_list>		-> NEWLINE <func_list>
+<func_list>		-> e
+
+<func>			-> <func_head> <statement_list> }
+<func_head>		-> ID <param_list> <return_types> { NEWLINE
+
+<param_list>	-> ( <parameters> )
+<parameters>	-> ID <TYPE>  <param_tail>
+<parameters>	-> e
+
+<param_tail>	-> , ID <TYPE> <param_tail>
+<param_tail>	-> e
+
+<return_types>	-> ( <return_list> )
+<return_types>	-> e
+
+<return_list>	-> 	<my_type>  <ret_list_tail>
+<return_list>	-> e
+
+<ret_list_tail> -> , <my_type> <ret_list_tail>
+<ret_list_tail> -> e
+
+<my_type>		-> INT
+<my_type>		-> STRING
+<my_type>		-> FLOAT64
+
+<statement_list>-> ID <id_type>	NEWLINE			<statement_list>
+<statement_list>-> if <if_statement> 			<statement_list>
+<statement_list>-> for <for_cycle>   			<statement_list>
+<statement_list>-> return <my_return> NEWLINE	<statement_list>
+<statement_list>-> NEWLINE   					<statement_list>
+<statement_list>-> e
+
+<id_type>		-> ( <func_call>
+<id_type>		-> <id_tail> <def>
+
+<id_tail>		-> , ID <id_tail>
+<id_tail>		-> e
+
+<def>			-> := <exp_main>
+<def>			-> =  <exp_equal>
+
+<exp_equal>		-> ID <func_or_exp>	/////????????????
+<exp_equal>		-> <exp_main> <exp_main_tail>
+
+<func_or_exp>	-> ( <func_call>
+<func_or_exp>	-> <exp_main_tail>
+
+<exp_main_tail>	-> , <exp_main> <exp_main_tail>
+<exp_main_tail>	-> e
+
+<my_return>		-> <exp_main> <exp_main_tail>
+<my_return>		-> e
+
+<func_call>	-> )
+<func_call>	->  <term> <term_tail> )
+
+<term>		-> ID
+<term>		-> STRING
+<term>		-> FLOAT
+<term>		-> STRING
+
+<term_tail>	-> , <term> <term_tail>
+<term_tail>	-> e
+
+<if_statement>	-> <if_head> { NEWLINE <statement_list> } <if_else>
+<if_head>		-> <exp_main>
+
+<if_else>		-> else { NEWLINE <statement_list> }
+
+<for_cycle>		-> <for_head> { NEWLINE <statement_list> }
+
+<for_head>		-> <for1> ; <for2> ; <for3>
+
+<for1>			-> ID := <exp_main>
+<for1>			-> e
+
+<for2>			-> <exp_main>
+
+<for3>			-> ID <ID_tail> = <exp_equal>
+<for3>			-> e

@@ -1,0 +1,93 @@
+
+
+//e znamena epsilon / lambda - prazdny stuff
+//Σ obsahuje všetky prvky jazyka
+
+
+<program>		-> #start <prolog> <func_list> #end SCANEOF
+<prolog>		-> package main(vlastne ID) #sem_prolog NEWLINE
+<prolog>		-> NEWLINE <prolog>
+
+<func_list>		-> func <func> <func_list> 		//niekde skontrolovat ci v subore je func main
+<func_list>		-> NEWLINE <func_list>
+<func_list>		-> e
+
+<func>			-> <func_head> <statement_list> } #check_return #func_end 				//tento func end pred alebo po } ???? hmmm
+<func_head>		-> ID #func_head <param_list> <return_types>   #func_head_end  { NEWLINE
+
+<param_list>	-> ( <parameters> )
+<parameters>	-> ID <TYPE> #func_param <param_tail>
+<parameters>	-> e
+
+<param_tail>	-> , ID <TYPE> #func_param  <param_tail>
+<param_tail>	-> e
+
+<return_types>	-> ( <return_list> )
+<return_types>	-> e
+
+<return_list>	-> 	<my_type>   #func_param_ret  <ret_list_tail>
+<return_list>	-> e
+
+<ret_list_tail> -> , <my_type>  #func_param_ret <ret_list_tail>
+<ret_list_tail> -> e
+
+<my_type>		-> INT
+<my_type>		-> STRING
+<my_type>		-> FLOAT64
+
+<statement_list>-> ID <id_type>	NEWLINE					<statement_list>
+<statement_list>-> if #if <if_statement> 				<statement_list>
+<statement_list>-> for <for_cycle>   					<statement_list>
+<statement_list>-> return #begin_equal <my_return> #return NEWLINE	<statement_list>
+<statement_list>-> NEWLINE   <statement_list>
+<statement_list>-> e
+
+<id_type>		->  #ID_FUNC  ( <func_call> #func_call
+<id_type>		->  #ID       <id_tail> <def>
+
+<id_tail>		-> , ID #ID_NEXT  <id_tail>
+<id_tail>		-> e
+
+<def>			-> := #expression #declaration
+<def>			-> = #begin_equal <exp_equal>
+
+<exp_equal>		-> ID <func_or_exp>
+<exp_equal>		-> #expression <exp_main_tail> #assignmnent
+
+<func_or_exp>	-> ( <func_call> #func_call #func_assignment
+<func_or_exp>	-> #expression <exp_main_tail> #assignmnent
+
+<exp_main_tail>	-> , #expression <exp_main_tail>
+<exp_main_tail>	-> e
+
+<my_return>		-> #expression <exp_main_tail>
+<my_return>		-> e
+
+<func_call>	-> )
+<func_call>	-> #term_start <term> #term <term_tail> )
+
+<term>		-> ID
+<term>		-> STRING
+<term>		-> FLOAT
+<term>		-> STRING
+
+<term_tail>	-> , <term> #term <term_tail>
+<term_tail>	-> e
+
+<if_statement>	-> #if_init <if_head> { NEWLINE <statement_list> } <if_else>
+<if_head>		->  #expression #if_jmp
+
+<if_else>		-> #if_else else { NEWLINE <statement_list> }	#else_end
+//<if_else>		-> #if_end e
+
+<for_cycle>		-> #for_init <for_head> { #for_body_start NEWLINE <statement_list> } #for_body_end #for_end
+
+<for_head>		-> <for1> ; #for2_start <for2> #for2_end ; #for3_start  <for3> #for3_end
+
+<for1>			-> ID #ID := #expression #declaration
+<for1>			-> e
+
+<for2>			-> #expression
+
+<for3>			-> ID #ID <ID_tail> = #begin_equal <exp_equal>
+<for3>			-> e

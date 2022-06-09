@@ -1,0 +1,113 @@
+package main
+
+func main() {
+// LEXICAL_ERROR (1)
+// SYNTAX_ERROR (2)
+// SEMANTIC_ERR (7)
+
+
+	print("----------------------\n")	
+
+	// DECLARATION TEST
+	af := 1.5
+	bf := 7.0
+	cf := 8.1
+	df := 0.0
+
+	a := 10
+	b := 26668883
+	c := 20
+	d := 0
+
+	as := "hdjs"
+	bs := "jdk"
+	
+	// ASSIGNMENT TEST
+	af = 1.5
+	bf = 7.0 
+	cf = 8.1
+	df = 0.0
+
+	a = 10
+	b = 26668883
+	c = 20
+	d = 0
+
+	as = "ddhdjs"
+	bs = "jddsk"	
+	
+	af = 4.3
+	af, bf, _ = 7.8, 9.4, 6.8
+	_ = 3748
+	_, _ = 223,21
+	
+	// ARITHMETIC OPERATION TEST
+
+	af = bf *bf +df /cf
+	dy := 6
+	ey := 6 + 6 / c + 1
+	
+	// ERROR TESTS
+	//af = 5		// TYPE_COMPATIBILITY (5)
+	//_ := 23
+	//afa = 8.8 + _		// UNDEFINED_VAR (3)
+	//af = 7.7 + b / 0.0 	// DIV_BY_ZERO (9)
+	//aaa := 16 + d / 0 +8	// DIV_BY_ZERO (9)
+	//af := 6.8		// ALREADY_DECLARED (3)
+	//a = 7 > 8		// INVALID_DATATYPE (4)
+		
+	// IF TEST
+
+	if af == 34.7 {
+		if (b-a+a == a+(a+b)){
+			c = a
+		} else {
+			c = a
+		}
+	} else {
+		c = a
+	}
+	
+	// FOR TEST
+
+
+	// CONCAT TEST
+	x := 0
+	s := "Toto\" je text"
+	t := "gg"
+	sss := s + t
+	ttt := "dskddks" + "dksd"
+	
+	// PRINT TEST 
+	print(s, "toto je ono", a, b, x)
+
+
+	// ADVANCED TESTS
+
+	s1 := "Toto je nejaky text" + "hh"
+	s2 := s1 + ", ktery jeste trochu obohatime"
+	print(s1,"\n", s2)
+	s1len := 0
+	s1len =len(s1)
+	s1len = s1len - 4
+	s1, _ = substr(s2, s1len, 4)
+	s1len = s1len + 1
+	print("4 znaky od", s1len,".znaku v\"", s2,"\":", s1,"\n")
+	print("Zadejte serazenou posloupnost vsech malych pismen a-h,")
+	print("pricemz se pismena nesmeji v posloupnosti opakovat: ")
+	err := 0
+	s1, err = inputs()
+	if err != 1 {
+		for ;s1 != "abcdefgh"; {
+			print("\n","Spatne zadana posloupnost,zkuste znovu: ")
+			s1, _ = inputs()
+		}
+	} else {
+		s1, _ = inputs()
+	}
+	
+
+	
+	print("\n")	
+	print("----------------------\n")	
+}

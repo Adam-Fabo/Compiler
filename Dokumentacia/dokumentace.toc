@@ -1,0 +1,24 @@
+\babel@toc {slovak}{}
+\contentsline {section}{\numberline {1}Úvod}{1}{section.1}%
+\contentsline {section}{\numberline {2}Lexikálna analýza}{1}{section.2}%
+\contentsline {section}{\numberline {3}Parser}{1}{section.3}%
+\contentsline {section}{\numberline {4}Tabuľka symbolov}{2}{section.4}%
+\contentsline {section}{\numberline {5}Sémantická analýza a generovanie kódu}{2}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Príkaz priradenia}{3}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Definícia premennej}{3}{subsection.5.2}%
+\contentsline {subsection}{\numberline {5.3}Definicia funkcie}{3}{subsection.5.3}%
+\contentsline {subsection}{\numberline {5.4}Podmienený príkaz (if-else)}{3}{subsection.5.4}%
+\contentsline {subsection}{\numberline {5.5}For cyklus}{3}{subsection.5.5}%
+\contentsline {subsection}{\numberline {5.6}Rámce}{3}{subsection.5.6}%
+\contentsline {subsection}{\numberline {5.7}Sémantické akcie pri returne}{4}{subsection.5.7}%
+\contentsline {subsection}{\numberline {5.8}Výrazy}{4}{subsection.5.8}%
+\contentsline {subsection}{\numberline {5.9}Optimalizácie}{4}{subsection.5.9}%
+\contentsline {section}{\numberline {6}Práca v tíme}{4}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Rozdelenie práce}{4}{subsection.6.1}%
+\contentsline {section}{\numberline {7}Záver}{5}{section.7}%
+\contentsline {section}{\numberline {8}Prílohy}{6}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Generovanie kódov}{6}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Diagram konečného automatu zameraný na lexikálny analyzátor}{8}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}LL Tabuľka}{10}{subsection.8.3}%
+\contentsline {subsection}{\numberline {8.4}LL Gramatika}{11}{subsection.8.4}%
+\contentsline {subsection}{\numberline {8.5}Precedenčná tabuľka}{12}{subsection.8.5}%

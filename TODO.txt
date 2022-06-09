@@ -1,0 +1,81 @@
+GS- do TODO.c davam fce zatim
+
+
+
+
+//taktiez niekde strom uz vstavanych funkcii
+
+//tiez nejaky counter ifov- aby sa dali generovat navestia
+//taktiez treba to delenie nulou osetrit asi?
+
+
+// na tieto funkcie bude tiez potrebne volat makro CHECK, vsetko to bude int func()
+
+- nejaka globalna premenna params * pararara kde sa budu ukladat vysledky expressionov - napr pri expression list
+ 		a nejaka global premenna params * IDIDIDIDID kde sa budu ukladat idecka pri muliiple assigment
+
+//todo mozno volanie funkcie nemusi byt take komplikovane kedze datovy zasobnik je len jeden
+
+
+ # start - napise .ifjcode20 a skoci na $main
+
+ # end - todo
+
+ pri praci s definiciou funkcie by to chcelo nejku globalnu struct kde by bolo
+
+ struct func{
+ 	char * name;
+ 	params * par;
+ 	params * ret;
+ }
+ //pricom par a ret bude
+
+ struct param{
+ 	unsigned size;
+ 	nejake pole enumov * types;
+ 	char * buffer;				//pole bufferov na param list, pri returne to moze byt empty
+ }
+
+ pricom nad paramom budu definovane funkcie ako pri buffer - cize create, append , delete - pricom append bude dynamicke
+
+
+ #func_head - spravi init struct func a spravi navestie a pushframe
+
+ #func_param     - prida do struct param
+ #func_param_ret - prida do struct ret
+
+ #func_head_end - spravi to ze funkciu da do symtable , a definuje premenne vo funkcii - mali by byt popushovane na zasobiku len v opacnom poradi
+
+ #func_end  - spravi navestie $func_name_end  kde sa skoci ked sa zavola return, zavola popframe
+
+ #return - treba si pamatat v ktorej funkcii som, da skok na $func_main_end - este treba overit ci return typy sedia
+
+ #ID (mozno zmenit nazov) - prida do IDIDIDIDIDID konkretnu premennu
+
+ #expression  - to necham na vas  - asi najlepsie by bolo pred expresnom si niekde dat zalozku ze kde zacino to exp a potom to odital vycitat a previest na infix
+ 								  - alebo postupne davat veci na nejaky zasbnik a uz rovno to konvertovat na infix -
+ 								  - tak ci onak vysledok by mal byt iba jeden na datovom zasobniku a jeho typ bv parararar
+
+ #ID_FUNC - zase globalna premenna do ktorej za zapise meno funkcie ktora sa bude ptm volat
+ #func_call - zavola sa funkcia v globalnej premennej pricom argumenty by uz mali byt na zasobniku a ich typ v parararara - overit ci je semanticky funckia spravne
+
+
+
+ if a for - asi najtahsia cast
+
+ #if zapise do global premenej ze je dalsi if - teoreticky to tu ani nemusi byt
+
+ #operator zapise do global prem ze o aky operator sa jedna
+
+ #if_jmp - vykona porovnanie a jump - a teraz je treba spravit harakiri z assemblerov
+ 		- taktiez najtahsia cast redefinicia vsetkych lokal premennych
+
+ #if_end spravit to ze vsetky hodnoty premennych v novom ramci nahadze do starsieho ramcu
+ #if_else to iste co if_jmp a if_end  - tiez viz assemblery
+
+
+ #for je analogia ifu len ine skoky a porovnavania - teraz sa mi to nechce robit
+
+
+
+
