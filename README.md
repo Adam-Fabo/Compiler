@@ -1,6 +1,6 @@
-# IFJ_projekt - prekladač
-Prekladač z jazyka IFJ20 (podmnožina GO) do medzikódu IFJcode20 (podobné asembleru)  
+# Compiler
+Compiles code similar to Go into instruction code similar to Assembler. 
   
-Pre viac viz [zadanie](IFJ_zadanie.pdf)
+For more see [assignment](IFJ_zadanie.pdf) (czech language).
 
 ![alt-text](Dokumentacia/images/Compiler.jpg)
